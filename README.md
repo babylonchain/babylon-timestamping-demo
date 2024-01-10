@@ -3,6 +3,8 @@
 This repository contains all the necessary artifacts and instructions to set up
 and run a Babylon network locally, for a BTC timestamping demo scenario.
 
+This repository is based on and adapted from the `babylon-deployment` repository.
+
 ## Prerequisites
 
 1. Install Docker Desktop
