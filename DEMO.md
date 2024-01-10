@@ -23,7 +23,15 @@ a complete storage solution with timestamps on top of it.
 
 Any number of verification rules can be added as part of or before the data storage step.
 
-**TODO**: Add diagram here.
+## Block Diagram
+
+```mermaid
+%%{init: {'theme': 'forest'}}%%
+flowchart TD
+  A[Bitcoin] <--> B[Relayer]
+  B <--> C[Babylon]
+  C <--> D[Storage Contract]
+```
 
 ## Infrastructure
 
