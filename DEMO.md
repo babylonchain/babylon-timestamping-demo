@@ -76,32 +76,27 @@ We just open an IDE and go through the main functionality of the storage contrac
 
   - Define working directory environment variable:
     ```shell
-    export WORKDIR="$HOME/work/"
-    ```
-  - Change to the `storage-contract` repository:
-    ```shell
-    cd $WORKDIR/storage-contract
+    export W="$HOME/work/B"
     ```
   - Compile the contract from scratch:
     ```shell
-    cargo clean && cargo build
+    cd $W/storage-contract && cargo clean && cargo build && cd -
     ```
-  - Run unit tests (optional): `cargo test`.
+  - Run unit tests (optional):
+    ```shell
+    cd $W/storage-contract && cargo test && cd -
+    ```
   - Compile an optimised (ready for deployment) version of the contract:
     ```shell
-    rm -rf ./artifacts && cargo run-script optimize
+    cd $W/storage-contract && rm -rf ./artifacts && cargo run-script optimize && cd -
     ```
   - Copy optimised contract to deployment project:
     ```shell
-    cp ./artifacts/storage_contract*.wasm $WORKDIR/babylon-timestamping-demo/bytecode/storage_contract.wasm
+    cd $W/storage-contract && cp ./artifacts/storage_contract*.wasm $W/babylon-timestamping-demo/bytecode/storage_contract.wasm && cd -
     ```
 
 ### 3. Setup Local Deployment blockchain environment (babylon-timestamping-demo).
 
-  - Switch to demo repository:
-    ```shell
-    cd $WORKDIR/babylon-timestamping-demo
-    ```
   - Launch local blockchain with simulated timestamping functionality. Starts the local deployment network, prepared for
 timestamping through `bitcoindsim`:
     ```shell
@@ -130,17 +125,16 @@ pre-built binaries are provided:
   - Create environment variables settings file:
     ```shell
     cat >env.sh <<EOF
-:
-
-export homeDir="./deployments/timestamping-bitcoind/.testnets/node0/babylond"
-export chainId="chain-test"
-export key="test-spending-key"
-export keyringBackend="--keyring-backend=test"
-export apiUrl="http://localhost:1317"
-export rpcUrl="http://localhost:26657"
-export nodeUrl="tcp://localhost:26657"
-export grpcUrl="localhost:9090"
-EOF
+    :
+    export homeDir="./deployments/timestamping-bitcoind/.testnets/node0/babylond"
+    export chainId="chain-test"
+    export key="test-spending-key"
+    export keyringBackend="--keyring-backend=test"
+    export apiUrl="http://localhost:1317"
+    export rpcUrl="http://localhost:26657"
+    export nodeUrl="tcp://localhost:26657"
+    export grpcUrl="localhost:9090"
+    EOF
     ```
   - Setup environment variables for blockchain access (Setups babylond node 0):
     ```shell
