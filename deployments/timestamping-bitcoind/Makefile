@@ -1,16 +1,32 @@
 DOCKER := $(shell which docker)
 GIT_TOPLEVEL := $(shell git rev-parse --show-toplevel)
 
+PUBLIC_IMAGE_REPO := public.ecr.aws/t9e9i3h0
+
+BABYLON_IMAGE_NAME := babylond
+BABYLON_IMAGE_TAG  := 79decc6a68666a51b9e75e9c4c8dcff00fdcebd7
+
+VIGILANTE_IMAGE_NAME := vigilante
+VIGILANTE_IMAGE_TAG  := 6f798d004ae93c9c9b8b11f48fc99f1899df0041
+
 build-bitcoindsim:
 	$(MAKE) -C $(GIT_TOPLEVEL)/contrib/images bitcoindsim
 
 build-babylond:
 	$(MAKE) -C $(GIT_TOPLEVEL)/babylon-private/contrib/images babylond
 
+pull-babylond:
+	docker pull $(PUBLIC_IMAGE_REPO)/$(BABYLON_IMAGE_NAME):$(BABYLON_IMAGE_TAG)
+	docker tag $(PUBLIC_IMAGE_REPO)/$(BABYLON_IMAGE_NAME):$(BABYLON_IMAGE_TAG) babylonchain/$(BABYLON_IMAGE_NAME):latest
+
 build-vigilante:
 	$(MAKE) -C $(GIT_TOPLEVEL)/vigilante-private BBN_PRIV_DEPLOY_KEY=${BBN_PRIV_DEPLOY_KEY} build-docker
 
-build-deployment-timestamping-bitcoind: build-babylond build-bitcoindsim build-vigilante
+pull-vigilante:
+	docker pull $(PUBLIC_IMAGE_REPO)/$(VIGILANTE_IMAGE_NAME):$(VIGILANTE_IMAGE_TAG)
+	docker tag $(PUBLIC_IMAGE_REPO)/$(VIGILANTE_IMAGE_NAME):$(VIGILANTE_IMAGE_TAG) babylonchain/$(VIGILANTE_IMAGE_NAME):latest
+
+build-deployment-timestamping-bitcoind: pull-babylond build-bitcoindsim pull-vigilante
 
 start-deployment-timestamping-bitcoind: stop-deployment-timestamping-bitcoind build-deployment-timestamping-bitcoind
 	./pre-deployment.sh
