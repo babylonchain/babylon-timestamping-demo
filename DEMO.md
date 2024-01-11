@@ -126,6 +126,7 @@ pre-built binaries are provided:
   - Set PATH environment variable:
     ```shell
     export PATH=$HOME/bin:$PATH
+    type babylond
     ```
 
 ### 4 Smart Contract deployment.
@@ -141,7 +142,7 @@ pre-built binaries are provided:
     export apiUrl="http://localhost:1317"
     export rpcUrl="http://localhost:26657"
     export nodeUrl="tcp://localhost:26657"
-    export grpcUrl="localhost:9090"
+    #export grpcUrl="localhost:9090"
     EOF
     ```
   - Setup environment variables for blockchain access (Setups babylond node 0):
@@ -201,9 +202,9 @@ pre-built binaries are provided:
   ```shell
   make stop-deployment-timestamping-bitcoind
   ```
-  - Remove binaries:
+  - Remove binaries / scripts:
   ```shell
-  rm -f $HOME/bin/babylond
+  rm -f $HOME/bin/babylond env.sh
   ```
 
 ## Conclusions
