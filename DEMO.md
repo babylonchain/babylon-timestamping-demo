@@ -127,6 +127,7 @@ pre-built binaries are provided:
     ```shell
     export PATH=$HOME/bin:$PATH
     type babylond
+    babylond version
     ```
 
 ### 4 Smart Contract deployment.
@@ -179,13 +180,13 @@ pre-built binaries are provided:
     ```shell
     data='This is example plain-text data'
     dataHex=$(echo -n $data | xxd -ps -c0)
-    storeMsg="{ \"save_data\": { \"data\": \"$dataHex\" } }"; echo $storeMsg
+    executeMsg="{ \"save_data\": { \"data\": \"$dataHex\" } }"; echo $executeMsg
     ```
     - Execute "store data" entry point:
     ```shell
-    babylond tx wasm execute $address "$storeMsg" --from=$key --gas=auto --gas-prices=1ubbn --gas-adjustment=1.3 --chain-id="$chainId" -b=sync --yes $keyringBackend --log_format=json --home=$homeDir
+    babylond tx wasm execute $address "$executeMsg" --from=$key --gas=auto --gas-prices=1ubbn --gas-adjustment=1.3 --chain-id="$chainId" -b=sync --yes $keyringBackend --log_format=json --home=$homeDir
     ```
-  - Execute `storage_contract` "check data" endpoint / handler.
+  - Query `storage_contract` "check data" endpoint / handler.
     - Prepare query payload message:
     ```shell
     dataHash=$(echo -n $data | sha256sum | cut -f1 -d\ )
