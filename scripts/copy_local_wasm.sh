@@ -9,7 +9,7 @@ OUTPUT_FOLDER="$(dirname "$0")/../bytecode"
 
 echo "DEV-only: copy from local built instead of downloading"
 
-cp -f  "$SOURCE_FOLDER"/artifacts/${CONTRACT}.wasm "$OUTPUT_FOLDER/"
+cp -f  "$SOURCE_FOLDER"/artifacts/${CONTRACT}*.wasm "$OUTPUT_FOLDER/$CONTRACT.wasm"
 
 cd "$SOURCE_FOLDER"
 TAG=$(git rev-parse HEAD)
