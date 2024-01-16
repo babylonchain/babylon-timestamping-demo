@@ -4,7 +4,7 @@ GIT_TOPLEVEL := $(shell git rev-parse --show-toplevel)
 PUBLIC_IMAGE_REPO := public.ecr.aws/t9e9i3h0
 
 BABYLON_IMAGE_NAME := babylond
-BABYLON_IMAGE_TAG  := 79decc6a68666a51b9e75e9c4c8dcff00fdcebd7
+BABYLON_IMAGE_TAG  := 234dc8606ab1b8103ccf13ab49d198306d8819ee
 
 VIGILANTE_IMAGE_NAME := vigilante
 VIGILANTE_IMAGE_TAG  := 6f798d004ae93c9c9b8b11f48fc99f1899df0041
