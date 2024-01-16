@@ -118,7 +118,7 @@ timestamping through `bitcoindsim`:
     ```shell
     docker logs -f babylondnode0
     ```
-  - Install babylond for your architecture (Needed for local CLI access). Currently Linux (x86_64) and Mac M1 (arm64)
+  - Install babylond for your architecture (Needed for local CLI access). Currently, Linux (x86_64) and Mac M1 (arm64)
 pre-built binaries are provided:
     ```shell
     mkdir -p $HOME/bin && gunzip -c ./babylon-private/babylond-$(uname -m).gz >$HOME/bin/babylond && chmod +x $HOME/bin/babylond
