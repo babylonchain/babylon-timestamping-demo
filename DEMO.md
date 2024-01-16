@@ -47,16 +47,16 @@ existing Bitcoin testnets, like Testnet-3, Regtest or Signet.
 
 This demo depends on a number of technologies and resources:
 
- - The Babylon blockchain itself. BabylonChain - Checkpointing Babylon to BTC provides a good overview of the Babylon
-timestamping technology. More details can be gathered from the Bitcoin-Enhanced Proof-of-Stake Security white paper.
- - Cosmos SDK. The Babylon blockchain is developed using the Cosmos SDK. So, this demo can serve as a reference /
+ - The Babylon blockchain itself. [BabylonChain - Checkpointing Babylon to BTC](https://babylonchain.io/blog/checkpointing-babylon-to-btc) provides a good overview of the Babylon
+timestamping technology. More details can be gathered from the[ Bitcoin-Enhanced Proof-of-Stake Security](https://arxiv.org/pdf/2207.08392.pdf) white paper.
+ - Cosmos SDK. The Babylon blockchain is developed using the [Cosmos SDK](https://v1.cosmos.network/sdk). So, this demo can serve as a reference /
 introduction to Cosmos Blockchains Development and Ecosystem.
- - CosmWasm. Smart Contract development for Cosmos-based chains is done using the CosmWasm framework. Again, this can
+ - CosmWasm. Smart Contract development for Cosmos-based chains is done using the [CosmWasm](https://cosmwasm.com/) framework. Again, this can
 serve as a Quick Start guide, _not-so-gentle_ introduction to Smart Contracts development. For extra resources, check the
-CosmWasm documentation pages.
- - Rust. The smart contracts of the CosmWasm framework are written in Rust, and compiled to WebAssembly.
+[CosmWasm documentation](https://docs.cosmwasm.com/) pages.
+ - Rust. The smart contracts of the CosmWasm framework are written in [Rust](https://www.rust-lang.org/), and compiled to [WebAssembly](https://webassembly.org/).
  - Bash. Though the setup for running and deploying the services used here can be done in a number of ways, interacting
-with the Blockchain and Smart Contract is done through a Bash shell / Command Line Interface (CLI). This has a number of
+with the Blockchain and Smart Contract is done through a[ Bash shell](https://www.gnu.org/software/bash/) / Command Line Interface (CLI). This has a number of
 drawbacks, but the big advantage is, that it can be scripted, documented and run in an interactive session. It can then
 be turned into more or less automated scripts, adapted, adjusted and modified accordingly to new requirements, etc.
 
