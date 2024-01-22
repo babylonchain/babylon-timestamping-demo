@@ -7,7 +7,7 @@ BABYLON_IMAGE_NAME := babylond
 BABYLON_IMAGE_TAG  := 234dc8606ab1b8103ccf13ab49d198306d8819ee
 
 VIGILANTE_IMAGE_NAME := vigilante
-VIGILANTE_IMAGE_TAG  := 6f798d004ae93c9c9b8b11f48fc99f1899df0041
+VIGILANTE_IMAGE_TAG  := e55a13952cacc59751f5c870a9bf4ec24ae425f1
 
 build-bitcoindsim:
 	$(MAKE) -C $(GIT_TOPLEVEL)/contrib/images bitcoindsim
