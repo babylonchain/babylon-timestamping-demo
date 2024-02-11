@@ -47,7 +47,7 @@ existing Bitcoin testnets, like Testnet-3, Regtest or Signet.
 
 This demo depends on a number of technologies and resources:
 
- - The Babylon blockchain itself. [BabylonChain - Checkpointing Babylon to BTC](https://babylonchain.io/blog/checkpointing-babylon-to-btc) provides a good overview of the Babylon
+ - The Babylon blockchain itself. [BabylonChain - Checkpointing Babylon to BTC](https://babylonchain.io/blog/checkpointing-+to-btc) provides a good overview of the Babylon
 timestamping technology. More details can be gathered from the[ Bitcoin-Enhanced Proof-of-Stake Security](https://arxiv.org/pdf/2207.08392.pdf) white paper.
  - Cosmos SDK. The Babylon blockchain is developed using the [Cosmos SDK](https://v1.cosmos.network/sdk). So, this demo can serve as a reference /
 introduction to Cosmos Blockchains Development and Ecosystem.
@@ -144,6 +144,7 @@ make build
 This command will compile the babylond binary.
 
 **3. Install the binary.**
+
 After building the binary, you might want to place it in a directory that's in your PATH for easy access. For example, you could move it to $HOME/bin, a common choice for user-specific scripts and binaries.
 
 First, ensure the target directory exists:
@@ -183,21 +184,6 @@ Check that the babylond binary is correctly installed and accessible from your P
 type babylond
 babylond version
 ```
-
-
-------------------------------------------------------
-
-  - Install babylond for your architecture (Needed for local CLI access). Currently, Linux (x86_64) and Mac M1 (arm64)
-pre-built binaries are provided:
-    ```shell
-    mkdir -p $HOME/bin && gunzip -c ./babylon-private/babylond-$(uname -m).gz >$HOME/bin/babylond && chmod +x $HOME/bin/babylond
-    ```
-  - Set PATH environment variable:
-    ```shell
-    export PATH=$HOME/bin:$PATH
-    type babylond
-    babylond version
-    ```
 
 ### 4 Smart Contract deployment.
 
