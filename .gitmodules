@@ -4,3 +4,6 @@
 [submodule "external/vigilante"]
 	path = external/vigilante
 	url = https://github.com/babylonchain/vigilante
+[submodule "storage-contract"]
+	path = storage-contract
+	url = https://github.com/babylonchain/storage-contract
