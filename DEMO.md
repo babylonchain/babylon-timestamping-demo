@@ -74,6 +74,12 @@ Besides the requirements listed in the [README.md](./README.md) file, we’ll ne
   - [storage-contract](https://github.com/babylonchain/storage-contract).
   - [babylon-timestamping-demo](https://github.com/babylonchain/babylon-timestamping-demo).
 
+### 4. Add Babylon & Vigilante submodules
+  - [Babylon Chain](https://github.com/babylonchain/babylon).
+    - `git submodule add https://github.com/babylonchain/babylon.git`
+  - [Vigilante](https://github.com/babylonchain/vigilante).
+    - `git submodule add https://github.com/babylonchain/vigilante.git`
+  
 ## Demo
 
 ### 1. Quick review of the storage-contract functionality and code.
@@ -118,6 +124,69 @@ timestamping through `bitcoindsim`:
     ```shell
     docker logs -f babylondnode0
     ```
+#### Install Babylon Binary
+
+**1. Clone the repository.**
+First, clone the Babylon repository. Open a terminal and run:
+
+```shell
+git clone https://github.com/babylonchain/babylon.git
+cd babylon
+```
+
+**2. Build the binary.**
+
+```shell
+# Inside the babylon repository directory
+make build
+```
+
+This command will compile the babylond binary.
+
+**3. Install the binary.**
+After building the binary, you might want to place it in a directory that's in your PATH for easy access. For example, you could move it to $HOME/bin, a common choice for user-specific scripts and binaries.
+
+First, ensure the target directory exists:
+
+```shell
+mkdir -p $HOME/bin
+```
+
+Then, if the babylond binary is created in the root of the clone repository or in a build directory, move it to $HOME/bin. You'll need to adjust the command based on where the binary is located after the build process:
+
+```shell
+# Assuming the binary is in the current directory
+mv babylond $HOME/bin
+```
+
+Or if it's in a `build` directory:
+
+```shell
+# Adjust the path as necessary based on actual build output
+mv build/babylond $HOME/bin
+```
+
+**Step 4: Set the PATH environment variable.**
+
+To ensure that your shell can find the babylond binary, add $HOME/bin to your PATH, if it's not already:
+
+```shell
+export PATH=$HOME/bin:$PATH
+```
+
+To make this change persistent across shell sessions, add the above line to your shell's initialization script, like ~/.bash_profile, ~/.bashrc, or ~/.zshrc, depending on your shell.
+
+**Step 5: Verify the installation**
+Check that the babylond binary is correctly installed and accessible from your PATH:
+
+```shell
+type babylond
+babylond version
+```
+
+
+------------------------------------------------------
+
   - Install babylond for your architecture (Needed for local CLI access). Currently, Linux (x86_64) and Mac M1 (arm64)
 pre-built binaries are provided:
     ```shell
