@@ -126,15 +126,19 @@ timestamping through `bitcoindsim`:
     ```
 #### Install Babylon Binary
 
-**1. Clone the repository.**
-First, clone the Babylon repository. Open a terminal and run:
+**1.Navigate to Your Project Directory**
+Ensure you're in the root directory of your existing project where you want to add Babylon as a submodule.
+
+**2. Add Babylon as a Submodule.**
 
 ```shell
-git clone https://github.com/babylonchain/babylon.git
-cd babylon
+git submodule add https://github.com/babylonchain/babylon.git path/to/babylon
+git submodule update --init --recursive
 ```
 
-**2. Build the binary.**
+Replace `path/to/babylon` with the desired location within your project where you want the Babylon submodule to reside.
+
+**3. Build the binary.**
 
 ```shell
 # Inside the babylon repository directory
@@ -143,7 +147,7 @@ make build
 
 This command will compile the babylond binary.
 
-**3. Install the binary.**
+**4. Install the binary.**
 
 After building the binary, you might want to place it in a directory that's in your PATH for easy access. For example, you could move it to $HOME/bin, a common choice for user-specific scripts and binaries.
 
@@ -167,7 +171,7 @@ Or if it's in a `build` directory:
 mv build/babylond $HOME/bin
 ```
 
-**Step 4: Set the PATH environment variable.**
+**Step 5: Set the PATH environment variable.**
 
 To ensure that your shell can find the babylond binary, add $HOME/bin to your PATH, if it's not already:
 
@@ -177,7 +181,7 @@ export PATH=$HOME/bin:$PATH
 
 To make this change persistent across shell sessions, add the above line to your shell's initialization script, like ~/.bash_profile, ~/.bashrc, or ~/.zshrc, depending on your shell.
 
-**Step 5: Verify the installation**
+**Step 6: Verify the installation**
 Check that the babylond binary is correctly installed and accessible from your PATH:
 
 ```shell
