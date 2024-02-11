@@ -7,7 +7,7 @@ This repository is based on and adapted from the `babylon-deployment` repository
 
 **A detailed blog post has been crafted to shed light on Babylon's innovative use of the Bitcoin time-stamping protocol, enhancing Blockchain security and data integrity. This exploration delves into the mechanisms Babylon employs to integrate with Bitcoin, offering a unique perspective on blockchain technology's future.**
 
-*Read the full article here for a deeper understanding: [Embracing the Future with Babylon]*(https://ali-the-curious.medium.com/embracing-the-future-with-babylon-f2fa84da4dee).
+*Read the full article [here](https://ali-the-curious.medium.com/embracing-the-future-with-babylon-f2fa84da4dee). for a deeper understanding.*
 
 ## Prerequisites
 
