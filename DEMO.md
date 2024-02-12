@@ -47,7 +47,7 @@ existing Bitcoin testnets, like Testnet-3, Regtest or Signet.
 
 This demo depends on a number of technologies and resources:
 
- - The Babylon blockchain itself. [BabylonChain - Checkpointing Babylon to BTC](https://babylonchain.io/blog/checkpointing-+to-btc) provides a good overview of the Babylon
+ - The Babylon blockchain itself. [BabylonChain - Checkpointing Babylon to BTC](https://babylonchain.io/blog/checkpointing-babylon-to-btc) provides a good overview of the Babylon
 timestamping technology. More details can be gathered from the[ Bitcoin-Enhanced Proof-of-Stake Security](https://arxiv.org/pdf/2207.08392.pdf) white paper.
  - Cosmos SDK. The Babylon blockchain is developed using the [Cosmos SDK](https://v1.cosmos.network/sdk). So, this demo can serve as a reference /
 introduction to Cosmos Blockchains Development and Ecosystem.
