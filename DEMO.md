@@ -88,30 +88,33 @@ We just open an IDE and go through the main functionality of the storage contrac
 
 ### 2. Compile and Optimise storage-contract Smart Contract.
 
-  - Define working directory environment variable:
-    ```shell
-    export W="$HOME/work/B"
-    ```
-  - Compile the contract from scratch:
-    ```shell
-    cd $W/storage-contract && cargo clean && cargo build && cd -
-    ```
-  - Run unit tests (optional):
-    ```shell
-    cd $W/storage-contract && cargo test && cd -
-    ```
-  - Compile an optimised (ready for deployment) version of the contract:
-    ```shell
-    cd $W/storage-contract && rm -rf ./artifacts && cargo run-script optimize && cd -
-    ```
-  - Copy optimised contract to deployment project:
-    ```shell
-    cd $W/storage-contract && cp ./artifacts/storage_contract*.wasm $W/babylon-timestamping-demo/bytecode/storage_contract.wasm && cd -
-    ```
+Compile the contract from scratch:
+
+```shell
+cd storage-contract && cargo clean && cargo build && cd -
+```
+
+Run unit tests (optional):
+
+```shell
+cd storage-contract && cargo test && cd -
+```
+
+Compile an optimised (ready for deployment) version of the contract:
+
+```shell
+cd storage-contract && rm -rf ./artifacts && cargo run-script optimize && cd -
+```
+
+Copy optimised contract to deployment project:
+
+```shell
+cd storage-contract && cp ./artifacts/storage_contract*.wasm babylon-timestamping-demo/bytecode/storage_contract.wasm && cd -
+```
 
 ### 3. Setup Local Deployment blockchain environment (babylon-timestamping-demo).
 
-  - Launch local blockchain with simulated timestamping functionality. Starts the local deployment network, prepared for
+Launch local blockchain with simulated timestamping functionality. Starts the local deployment network, prepared for
 timestamping through `bitcoindsim`:
     ```shell
     make start-deployment-timestamping-bitcoind
