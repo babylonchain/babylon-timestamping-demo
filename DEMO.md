@@ -76,9 +76,9 @@ Besides the requirements listed in the [README.md](./README.md) file, we’ll ne
 
 ### 4. Add Babylon & Vigilante submodules
   - [Babylon Chain](https://github.com/babylonchain/babylon).
-    - `git submodule add https://github.com/babylonchain/babylon.git`
+    - `git submodule init && git submodule update`
   - [Vigilante](https://github.com/babylonchain/vigilante).
-    - `git submodule add https://github.com/babylonchain/vigilante.git`
+    - `git submodule init && git submodule update`
   
 ## Demo
 
@@ -131,12 +131,11 @@ Ensure you're in the root directory of your existing project where you want to a
 
 **2. Add Babylon as a Submodule.**
 
-```shell
-git submodule add https://github.com/babylonchain/babylon.git path/to/babylon
-git submodule update --init --recursive
-```
+`git submodule init && git submodule update`
 
-Replace `path/to/babylon` with the desired location within your project where you want the Babylon submodule to reside.
+Navigate to the directory where Babylon submodule is added.
+
+`cd external/babylon`
 
 **3. Build the binary.**
 
