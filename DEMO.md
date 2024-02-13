@@ -72,21 +72,27 @@ Besides the requirements listed in the [README.md](./README.md) file, we’ll ne
 - `xxd` (`type xxd || apt-get install xxd || brew install vim`)
 - `sha256sum` (`type sha256sum || apt-get install coreutils || brew install coreutils`).
 
-**3. Clone (public) repositories:**
-
-- [storage-contract](https://github.com/babylonchain/storage-contract).
-`git clone https://github.com/babylonchain/storage-contract.git`
+**2. Clone this repository:**
 
 - [babylon-timestamping-demo](https://github.com/babylonchain/babylon-timestamping-demo).
-`git clone https://github.com/babylonchain/babylon-timestamping-demo.git`
-  
+
 ## Demo
 
-### 1. Quick review of the storage-contract functionality and code
+### 1. Init and Update Babylon, Vigilante, and the Storage contract submodules:
+
+- [Babylon Chain](https://github.com/babylonchain/babylon).
+- [Vigilante](https://github.com/babylonchain/vigilante).
+- [storage-contract](https://github.com/babylonchain/storage-contract).
+
+```shell
+git submodule init && git submodule update
+```
+
+### 2. Quick review of the `storage-contract` functionality and code
 
 We just open an IDE and go through the main functionality of the storage contract.
 
-### 2. Compile and Optimise storage-contract Smart Contract
+### 3. Compile and Optimise storage-contract Smart Contract
 
 Compile the contract from scratch:
 
@@ -109,13 +115,13 @@ cd storage-contract && rm -rf ./artifacts && cargo run-script optimize && cd -
 Copy optimised contract to deployment project:
 
 ```shell
-cd storage-contract && cp ./artifacts/storage_contract*.wasm babylon-timestamping-demo/bytecode/storage_contract.wasm && cd -
+cd storage-contract && cp ./artifacts/storage_contract*.wasm ../bytecode/storage_contract.wasm && cd -
 ```
 
-### 3. Setup Local Deployment blockchain environment (babylon-timestamping-demo)
+### 4. Setup Local Deployment blockchain environment (babylon-timestamping-demo)
 
 Launch local blockchain with simulated timestamping functionality. Starts the local deployment network, prepared for timestamping through `bitcoindsim`:
-  
+
 ```shell
 make start-deployment-timestamping-bitcoind
 ```
@@ -125,44 +131,29 @@ make start-deployment-timestamping-bitcoind
 ```shell
 docker ps
 ```
-  
+
 - Check container logs (in another terminal):
 
 ```shell
 docker logs -f babylondnode0
 ```
 
-#### Install Babylon Binary
+### 5. Install Babylon Binary
 
-**1. Navigate to Your Project Directory:**
-
-Ensure you're in the root directory of your existing project where you want to add Babylon as a submodule.
-
-**2. Add Babylon & Vigilante as Submodules:**
-
-- Navigate to the directory where Babylon submodule is added.
-
-`cd external/babylon`
-
-`git submodule init && git submodule update`
-
-- Then, navigate to the directory where Vigilante submodule is added.
-
-`cd external/vigilante`
-
-`git submodule init && git submodule update`
-
-**3. Build & Install the binary:**
+Navigate to the directory where the Babylon submodule is added, and build it:
 
 ```shell
-# Inside the babylon repository directory
-make build && make install
+cd external/babylon && make install && cd -
 ```
 
-This command will compile the babylond binary.
+These commands will compile and install the babylond binary.
 
 **4. Verify the installation**
 Check that the babylond binary is correctly installed and accessible from your PATH:
+
+```shell
+export PATH=$PATH:$HOME/go/bin
+```
 
 ```shell
 type babylond
