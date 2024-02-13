@@ -56,7 +56,7 @@ serve as a Quick Start guide, _not-so-gentle_ introduction to Smart Contracts de
 [CosmWasm documentation](https://docs.cosmwasm.com/) pages.
 - Rust. The smart contracts of the CosmWasm framework are written in [Rust](https://www.rust-lang.org/), and compiled to [WebAssembly](https://webassembly.org/).
 - Bash. Though the setup for running and deploying the services used here can be done in a number of ways, interacting
-with the Blockchain and Smart Contract is done through a[Bash shell](https://www.gnu.org/software/bash/) / Command Line Interface (CLI). This has a number of
+with the Blockchain and Smart Contract is done through a [Bash shell](https://www.gnu.org/software/bash/) / Command Line Interface (CLI). This has a number of
 drawbacks, but the big advantage is, that it can be scripted, documented and run in an interactive session. It can then
 be turned into more or less automated scripts, adapted, adjusted and modified accordingly to new requirements, etc.
 
@@ -75,7 +75,10 @@ Besides the requirements listed in the [README.md](./README.md) file, we’ll ne
 **3. Clone (public) repositories:**
 
 - [storage-contract](https://github.com/babylonchain/storage-contract).
+`git clone https://github.com/babylonchain/storage-contract.git`
+
 - [babylon-timestamping-demo](https://github.com/babylonchain/babylon-timestamping-demo).
+`git clone https://github.com/babylonchain/babylon-timestamping-demo.git`
 
 **4. Add Babylon & Vigilante submodules:**
 
