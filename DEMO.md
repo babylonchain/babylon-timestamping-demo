@@ -138,13 +138,19 @@ docker logs -f babylondnode0
 
 Ensure you're in the root directory of your existing project where you want to add Babylon as a submodule.
 
-**2. Add Babylon as a Submodule:**
+**2. Add Babylon & Vigilante as Submodules:**
+
+- Navigate to the directory where Babylon submodule is added.
+
+`cd external/babylon`
 
 `git submodule init && git submodule update`
 
-Navigate to the directory where Babylon submodule is added.
+- Then, navigate to the directory where Vigilante submodule is added.
 
-`cd external/babylon`
+`cd external/vigilante`
+
+`git submodule init && git submodule update`
 
 **3. Build & Install the binary:**
 
