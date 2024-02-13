@@ -79,16 +79,6 @@ Besides the requirements listed in the [README.md](./README.md) file, we’ll ne
 
 - [babylon-timestamping-demo](https://github.com/babylonchain/babylon-timestamping-demo).
 `git clone https://github.com/babylonchain/babylon-timestamping-demo.git`
-
-**4. Add Babylon & Vigilante submodules:**
-
-[Babylon Chain](https://github.com/babylonchain/babylon)
-
-- `git submodule init && git submodule update`
-
-[Vigilante](https://github.com/babylonchain/vigilante)
-
-- `git submodule init && git submodule update`
   
 ## Demo
 
