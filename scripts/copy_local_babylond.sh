@@ -3,7 +3,7 @@ set -o errexit -o nounset -o pipefail
 command -v shellcheck >/dev/null && shellcheck "$0"
 
 BIN="babylond"
-SOURCE_REPO="babylon-private"
+SOURCE_REPO="babylon"
 SOURCE_FOLDER="$(dirname "$0")/../../$SOURCE_REPO"
 OUTPUT_FOLDER="$(dirname "$0")/../$SOURCE_REPO"
 
