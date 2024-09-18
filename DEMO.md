@@ -80,9 +80,9 @@ Besides the requirements listed in the [README.md](./README.md) file, we’ll ne
 
 ### 1. Init and Update Babylon, Vigilante, and the Storage contract submodules:
 
-- [Babylon Chain](https://github.com/babylonchain/babylon).
-- [Vigilante](https://github.com/babylonchain/vigilante).
-- [storage-contract](https://github.com/babylonchain/storage-contract).
+- [Babylon Chain](https://github.com/babylonlabs-io/babylon).
+- [Vigilante](https://github.com/babylonlabs-io/vigilante).
+- [storage-contract](https://github.com/babylonlabs-io/storage-contract).
 
 ```shell
 git submodule init && git submodule update

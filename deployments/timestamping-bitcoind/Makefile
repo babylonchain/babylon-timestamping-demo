@@ -5,13 +5,13 @@ build-bitcoindsim:
 	$(MAKE) -C $(GIT_TOPLEVEL)/contrib/images bitcoindsim
 
 build-babylond:
-	$(DOCKER) build -f $(GIT_TOPLEVEL)/external/babylon/contrib/images/babylond/Dockerfile -t babylonchain/babylond:local $(GIT_TOPLEVEL)/external/babylon
+	$(DOCKER) build -f $(GIT_TOPLEVEL)/external/babylon/contrib/images/babylond/Dockerfile -t babylonlabs-io/babylond:local $(GIT_TOPLEVEL)/external/babylon
 
 pull-babylond: build-babylond
 	
 build-vigilante:
-	cd $(GIT_TOPLEVEL)/external/vigilante && docker build -t babylonchain/vigilante:local .
-	docker tag babylonchain/vigilante:local babylonchain/vigilante:latest
+	cd $(GIT_TOPLEVEL)/external/vigilante && docker build -t babylonlabs-io/vigilante:local .
+	docker tag babylonlabs-io/vigilante:local babylonlabs-io/vigilante:latest
 
 pull-vigilante: build-vigilante
 
