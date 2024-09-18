@@ -6,6 +6,7 @@ build-bitcoindsim:
 
 build-babylond:
 	$(DOCKER) build -f $(GIT_TOPLEVEL)/external/babylon/contrib/images/babylond/Dockerfile -t babylonlabs-io/babylond:local $(GIT_TOPLEVEL)/external/babylon
+	$(DOCKER) tag babylonlabs-io/babylond:local babylonlabs-io/babylond:latest
 
 pull-babylond: build-babylond
 	
