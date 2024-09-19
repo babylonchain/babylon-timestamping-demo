@@ -4,8 +4,8 @@ command -v shellcheck >/dev/null && shellcheck "$0"
 
 CONTRACT="storage_contract"
 SOURCE_REPO=${CONTRACT/_/-}
-SOURCE_FOLDER="$(dirname "$0")/../../$SOURCE_REPO"
-OUTPUT_FOLDER="$(dirname "$0")/../bytecode"
+SOURCE_FOLDER="$(dirname "$0")/../$SOURCE_REPO"
+OUTPUT_FOLDER="$(dirname "$0")/../bytecode/"
 
 echo "DEV-only: copy from local built instead of downloading"
 
