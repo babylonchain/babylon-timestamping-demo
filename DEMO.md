@@ -65,6 +65,7 @@ be turned into more or less automated scripts, adapted, adjusted and modified ac
 Besides the requirements listed in the [README.md](./README.md) file, we’ll need to install the following for the demo:
 
 **1. Install [Rust](https://www.rust-lang.org/tools/install) (v1.70.0 or higher)**
+
 **2. Install CLI utils:**
 
 - `jq` (`type jq || apt-get install jq || brew install jq`)
@@ -72,7 +73,7 @@ Besides the requirements listed in the [README.md](./README.md) file, we’ll ne
 - `xxd` (`type xxd || apt-get install xxd || brew install vim`)
 - `sha256sum` (`type sha256sum || apt-get install coreutils || brew install coreutils`).
 
-**2. Clone this repository:**
+**3. Clone this repository:**
 
 - [babylon-timestamping-demo](https://github.com/babylonchain/babylon-timestamping-demo).
 
